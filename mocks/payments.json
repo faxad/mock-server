@@ -1,0 +1,29 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/payments",
+      "body": {
+        "counterpartyIBAN": "CH8089144265645434356",
+        "amount": 15000
+      },
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "status": "accepted",
+        "transactionRef": "XVJ3KF9"
+      },
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      }
+    }
+  }
+]

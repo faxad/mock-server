@@ -1,0 +1,27 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/transactions",
+      "queryStringParameters": {
+        "transactionRef": [
+          "XVJ3KF9"
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "transactionId": "945c47d1-203f-49ca-896a-5279d8075785",
+        "transactionRef": "XVJ3KF9",
+        "amount": 65000,
+        "charges": 75
+      },
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      }
+    }
+  }
+]
