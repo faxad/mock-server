@@ -1,0 +1,45 @@
+[ {
+  "httpRequest" : {
+    "method" : "GET",
+    "path" : "/",
+    "headers" : {
+      "content-length" : [ "0" ],
+      "User-Agent" : [ "python-requests/2.32.3" ],
+      "Host" : [ "mockserver:1080" ],
+      "Connection" : [ "keep-alive" ],
+      "Accept-Encoding" : [ "gzip, deflate" ],
+      "Accept" : [ "*/*" ]
+    },
+    "keepAlive" : true,
+    "secure" : false,
+    "protocol" : "HTTP_1_1",
+    "localAddress" : "48418a709fa3/172.18.0.4:1080",
+    "remoteAddress" : "172.18.0.3:36956"
+  },
+  "httpResponse" : {
+    "statusCode" : 200,
+    "reasonPhrase" : "OK",
+    "headers" : {
+      "server" : [ "uvicorn" ],
+      "date" : [ "Sun, 18 Aug 2024 10:39:39 GMT" ],
+      "content-type" : [ "application/json" ]
+    },
+    "body" : {
+      "contentType" : "application/json",
+      "type" : "JSON",
+      "json" : {
+        "source" : "integration-service",
+        "processed" : "2024-08-18T10:39:39.655213"
+      },
+      "rawBytes" : "eyJzb3VyY2UiOiJpbnRlZ3JhdGlvbi1zZXJ2aWNlIiwicHJvY2Vzc2VkIjoiMjAyNC0wOC0xOFQxMDozOTozOS42NTUyMTMifQ=="
+    }
+  },
+  "id" : "ed0045fa-e115-47c5-a1c9-7b4a1fa064b4",
+  "priority" : 0,
+  "timeToLive" : {
+    "unlimited" : true
+  },
+  "times" : {
+    "remainingTimes" : 1
+  }
+} ]

@@ -1,10 +1,38 @@
-version: '3'
+# version: '3'
 services:
-  mockServer:
+
+  mockserver:
     image: mockserver/mockserver:latest
+    # command: -logLevel DEBUG -serverPort 1080 -proxyRemotePort 80 -proxyRemoteHost integration
     ports:
       - 1080:1080
     volumes:
       - ./mocks:/config/mocks
     environment:
-      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/mocks/*.json
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/mocks/*.json
+
+  integration:
+    build:
+      context: ./integration
+    ports:
+      - 8088:80
+
+  service:
+    build:
+      context: ./service
+    ports:
+      - 8089:80
+  
+  # master:
+  #   image: locustio/locust
+  #   ports:
+  #    - "8089:8089"
+  #   volumes:
+  #     - ./:/mnt/locust
+  #   command: -f /mnt/locust/locustfile.py --master -H http://master:8089
+
+  # worker:
+  #   image: locustio/locust
+  #   volumes:
+  #     - ./:/mnt/locust
+  #   command: -f /mnt/locust/locustfile.py --worker --master-host master
