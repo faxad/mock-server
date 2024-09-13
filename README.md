@@ -100,3 +100,6 @@ date
 Sun Aug 18 13:45:41 +03 2024
 ```
 
+#### Architecture
+
+![mock-server-architecture](mockserver-architecture.svg)
