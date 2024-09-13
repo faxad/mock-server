@@ -50,7 +50,7 @@ mockserver:
 - build the mocks (proxy mode will record the `expectations`)
 
 ```bash
-curl http://localhost:8089/ | jq
+curl -H "X-Token:$(uuidgen)" http://localhost:8089/ | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100    73  100    73    0     0    160      0 --:--:-- --:--:-- --:--:--   159
@@ -65,6 +65,13 @@ curl http://localhost:8089/ | jq
 - extract and load the `expectations`
 ```bash
 curl -v -X PUT "http://localhost:1080/mockserver/retrieve?type=RECORDED_EXPECTATIONS&format=JSON" -o ./mocks/recording.json
+```
+
+#### Transform
+- remove `X-Token` header
+```bash
+cat <<< $(jq 'del(.[].httpRequest.headers["X-Token"])' ./mocks/recording.json) > ./mocks/recording.json
+
 ```
 
 #### Mock
